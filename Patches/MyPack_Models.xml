@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Binds each model to its thing when IsoRim's Api.Version is at least minVersion (2: plain bindings; see the guide for
+       the version each ModelDef field needs). A field newer than version 2 (cutaway, rotationByFacing ...) goes here next to
+       its <thingDef>, in an operation gated on the highest version used, never into Defs/ (an older IsoRim would report an
+       XML error). IsoRimPackGate.dll (1.7/Assemblies) holds the class; it does nothing without
+       IsoRim, so the pack loads either way. Never add whole ModelDefs from a patch: they would have no mod folder and IsoRim
+       could not find their model files. -->
+  <Operation Class="IsoRimPackGate.PatchOperation_IfIsoRimApi">
+    <minVersion>2</minVersion>
+    <apply Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/IsoRim.ModelDef[defName="R3D_MyModelPack_AncientMechGestatorTank"]</xpath>
+          <value><thingDef>AncientMechGestatorTank</thingDef></value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/IsoRim.ModelDef[defName="R3D_MyModelPack_AIPersonaCore"]</xpath>
+          <value><thingDef>AIPersonaCore</thingDef></value>
+        </li>
+      </operations>
+    </apply>
+  </Operation>
+</Patch>

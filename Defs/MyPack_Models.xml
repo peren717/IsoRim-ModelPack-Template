@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- The models of this pack. No <thingDef> here: Patches/MyPack_Models.xml adds it, so a too old IsoRim simply leaves them
+       out. Paths are relative to this mod's folder. Guide: IsoRim's Docs/ModelPacks.md. -->
+
+  <!-- A building: the ancient mech vat (2x2, can be turned), built facing north (the red marker is its north side). -->
+  <IsoRim.ModelDef>
+    <defName>R3D_MyModelPack_AncientMechGestatorTank</defName>
+    <model>Models/mypack_tank.obj</model>
+    <builtFor>(2, 2)</builtFor>
+  </IsoRim.ModelDef>
+
+  <!-- An item: the persona core. overArt draws it with the model also while items use the game's art (the default). -->
+  <IsoRim.ModelDef>
+    <defName>R3D_MyModelPack_AIPersonaCore</defName>
+    <model>Models/mypack_case.obj</model>
+    <builtFor>(1, 1)</builtFor>
+    <overArt>true</overArt>
+  </IsoRim.ModelDef>
+</Defs>
